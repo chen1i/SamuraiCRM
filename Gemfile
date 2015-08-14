@@ -1,5 +1,6 @@
 source 'https://ruby.taobao.org'
 
+gem 'samurai_core', path: 'engines/core'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
