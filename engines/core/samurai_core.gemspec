@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'bootstrap-sass'
   s.add_dependency 'autoprefixer-rails'
   s.add_dependency 'devise', '~> 3.5.2'
+  s.add_dependency 'cancancan', '~> 1.12.0'
 
   s.add_development_dependency 'mysql2'
 end

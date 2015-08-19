@@ -4,6 +4,7 @@ PATH
     samurai_core (0.0.1)
       autoprefixer-rails
       bootstrap-sass
+      cancancan (~> 1.12.0)
       devise (~> 3.5.2)
       rails (~> 4.2.3)
       sass-rails
@@ -60,6 +61,7 @@ GEM
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
+    cancancan (1.12.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)

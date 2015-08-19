@@ -3,7 +3,7 @@
     <%= link_to 'Dashboard', samurai.admin_path %>
   </li>
 
-  <li class="<%= active(samurai.admin_users_path) %>">
+  <li class="<%= active(admin_users_path) %>">
     <%= link_to samurai.admin_users_path do %>
       Users
       <span class="badge"><%= Samurai::User.count %></span>
