@@ -2,6 +2,17 @@ module Samurai
   class Ability
     include CanCan::Ability
 
+    class_attribute :abilities
+    self.abilities = Set.new
+
+    def self.register_ability(ability)
+        self.abilities.add(ability)
+    end
+
+    def self.remove_ability(ability)
+        self.abilities.delete(ability)
+    end
+
     def initialize(user)
     # Define abilities for the passed in user here. For example:
     #
@@ -33,6 +44,11 @@ module Samurai
         can :manage, :all
       else
         can :read, :dashboard
+      end
+
+      self.abilities.each do |klass|
+        ability = klass.new(user)
+        @rules = rules + ability.send(:rules)
       end
     end
   end
