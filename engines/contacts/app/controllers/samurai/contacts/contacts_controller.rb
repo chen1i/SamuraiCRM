@@ -56,7 +56,7 @@ module Samurai::Contacts
 
       # Only allow a trusted parameter "white list" through.
       def contact_params
-        params.require(:contact).permit(:frist_name, :last_name, :company, :email, :phone)
+        params.require(:contact).permit(:first_name, :last_name, :company, :email, :phone)
       end
   end
 end
