@@ -1,7 +1,6 @@
 source 'https://ruby.taobao.org'
 
 gem 'modular_engine'
-gem 'deface'
 
 gem 'samurai_core', path: 'engines/core'
 gem 'samurai_contacts', path: 'engines/contacts'

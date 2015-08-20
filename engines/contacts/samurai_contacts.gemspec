@@ -18,6 +18,5 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency 'rails', '~> 4.2.3'
-  # s.add_dependency 'samurai_core'
-  # s.add_dependency 'deface'
+  s.add_dependency 'deface'
 end
