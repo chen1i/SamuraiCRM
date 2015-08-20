@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150817092851) do
+ActiveRecord::Schema.define(version: 20150820072212) do
+
+  create_table "samurai_contacts_contacts", force: :cascade do |t|
+    t.string   "first_name", limit: 255
+    t.string   "last_name",  limit: 255
+    t.string   "company",    limit: 255
+    t.string   "email",      limit: 255
+    t.string   "phone",      limit: 255
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "samurai_contacts_contacts", ["user_id"], name: "index_samurai_contacts_contacts_on_user_id", using: :btree
 
   create_table "samurai_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -32,4 +45,5 @@ ActiveRecord::Schema.define(version: 20150817092851) do
   add_index "samurai_users", ["email"], name: "index_samurai_users_on_email", unique: true, using: :btree
   add_index "samurai_users", ["reset_password_token"], name: "index_samurai_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "samurai_contacts_contacts", "samurai_users", column: "user_id"
 end
