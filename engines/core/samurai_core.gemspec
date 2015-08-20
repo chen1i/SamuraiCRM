@@ -24,4 +24,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'cancancan', '~> 1.12.0'
 
   s.add_development_dependency 'mysql2'
+  s.add_development_dependency 'rspec-rails'
+  s.add_development_dependency 'factory_girl_rails'
+  s.add_development_dependency 'faker'
+  s.add_development_dependency 'database_cleaner'
 end
