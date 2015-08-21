@@ -3,6 +3,7 @@ require_dependency "samurai/application_controller"
 module Samurai::Tasks
   class TasksController < ApplicationController
     before_action :set_task, only: [:show, :edit, :update, :destroy]
+    authorize_resource class: Samurai::Tasks::Task
 
     # GET /tasks
     def index
