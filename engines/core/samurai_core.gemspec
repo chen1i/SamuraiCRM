@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.name        = 'samurai_core'
   s.version     = Samurai::Core::VERSION
   s.authors     = ['Li Chen']
-  s.email       = ['kyrrechen@gmail.com']
+  s.email       = ['fakeemail@abc.com']
   s.homepage    = 'http://lvh.me/homepage'
   s.summary     = 'Summary of Core.'
   s.description = 'Description of Core.'

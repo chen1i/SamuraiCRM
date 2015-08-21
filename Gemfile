@@ -4,6 +4,7 @@ gem 'modular_engine'
 
 gem 'samurai_core', path: 'engines/core'
 gem 'samurai_contacts', path: 'engines/contacts'
+gem 'samurai_tasks', path: 'engines/tasks'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'

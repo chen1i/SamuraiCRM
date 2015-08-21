@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150820072212) do
+ActiveRecord::Schema.define(version: 20150821092950) do
 
   create_table "samurai_contacts_contacts", force: :cascade do |t|
     t.string   "first_name", limit: 255
@@ -25,6 +25,18 @@ ActiveRecord::Schema.define(version: 20150820072212) do
   end
 
   add_index "samurai_contacts_contacts", ["user_id"], name: "index_samurai_contacts_contacts_on_user_id", using: :btree
+
+  create_table "samurai_tasks_tasks", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.text     "content",    limit: 65535
+    t.integer  "user_id",    limit: 4
+    t.integer  "contact_id", limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "samurai_tasks_tasks", ["contact_id"], name: "index_samurai_tasks_tasks_on_contact_id", using: :btree
+  add_index "samurai_tasks_tasks", ["user_id"], name: "index_samurai_tasks_tasks_on_user_id", using: :btree
 
   create_table "samurai_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -46,4 +58,6 @@ ActiveRecord::Schema.define(version: 20150820072212) do
   add_index "samurai_users", ["reset_password_token"], name: "index_samurai_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "samurai_contacts_contacts", "samurai_users", column: "user_id"
+  add_foreign_key "samurai_tasks_tasks", "samurai_contacts_contacts", column: "contact_id"
+  add_foreign_key "samurai_tasks_tasks", "samurai_users", column: "user_id"
 end
