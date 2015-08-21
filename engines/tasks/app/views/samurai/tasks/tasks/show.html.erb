@@ -12,7 +12,7 @@
     <%= @task.user.email %>
     <br/>
     <strong>Contact:</strong>
-    <%= @task.contact.email %>
+    <%= @task.try(:contact) ? @task.contact.email : '' %>
     <br/>
   </div>
 </div>
