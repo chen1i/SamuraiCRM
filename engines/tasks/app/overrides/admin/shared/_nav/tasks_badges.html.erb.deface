@@ -1,0 +1,2 @@
+<!-- insert_after "[data-samurai-hook='admin_dashboard']" -->
+<%= render 'overrides/admin_tasks_badges' %>
